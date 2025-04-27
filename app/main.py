@@ -28,7 +28,9 @@ def get_print_strategy(
             raise ValueError(f"Unknown print type: {strategy_type}")
 
 
-def get_serializer_strategy(strategy_type: str) -> JSONSerializer | XMLSerializer:
+def get_serializer_strategy(
+        strategy_type: str
+) -> JSONSerializer | XMLSerializer:
     match strategy_type:
         case "json":
             return JSONSerializer()
