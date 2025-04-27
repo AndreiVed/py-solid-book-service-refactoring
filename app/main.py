@@ -4,7 +4,9 @@ from app.printer import ConsolePrint, ReversePrint
 from app.serializer import JSONSerializer, XMLSerializer
 
 
-def get_display_strategy(strategy_type: str) -> ConsoleDisplay | ReverseDisplay:
+def get_display_strategy(
+        strategy_type: str
+) -> ConsoleDisplay | ReverseDisplay:
     match strategy_type:
         case "console":
             return ConsoleDisplay()
@@ -14,7 +16,9 @@ def get_display_strategy(strategy_type: str) -> ConsoleDisplay | ReverseDisplay:
             raise ValueError(f"Unknown display type: {strategy_type}")
 
 
-def get_print_strategy(strategy_type: str) -> ConsolePrint | ReversePrint:
+def get_print_strategy(
+        strategy_type: str
+) -> ConsolePrint | ReversePrint:
     match strategy_type:
         case "console":
             return ConsolePrint()
